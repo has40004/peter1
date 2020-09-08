@@ -21,19 +21,42 @@ const personalMovieDB = {
     genres:[],
     privat: false
 };
-const a = prompt ("один из последних просмотренных фильмов?" , ""),
-      b = prompt ("на сколько оцените его ?" , ""),
-      c = prompt ("один из последних просмотренных фильмов?" , ""),
-      d = prompt ("на сколько оцените его ?" , "");
+// const a = prompt ("один из последних просмотренных фильмов?" , ""),
+//       b = prompt ("на сколько оцените его ?" , ""),
+//       c = prompt ("один из последних просмотренных фильмов?" , ""),
+//       d = prompt ("на сколько оцените его ?" , "");
 
-personalMovieDB.Movies[a] = b; 
-personalMovieDB.Movies[c] = d;
+// personalMovieDB.Movies[a] = b; 
+// personalMovieDB.Movies[c] = d;
+// 
+
+for( let i = 0 ; i < 2 ; i++){
+    const a = prompt ("один из последних просмотренных фильмов?" , ""),
+          b = prompt ("на сколько оцените его ?" , "");
+    if ( a  != null && b != null && a !='' && b != '' && a.length < 50){
+        personalMovieDB.Movies[a] = b; 
+        console.log('done');
+    }
+    else {
+        console.log('error');
+        i--;
+    }
+
+         
+};
+if (personalMovieDB.count < 10) {
+    console.log("a let of movies");
+} else if ( personalMovieDB.count >= 10 && personalMovieDB.count < 30){
+    console.log("you are good");
+} else if (personalMovieDB.count >= 30 ){
+    console.log("you are ammezing");
+} else {
+    console.log("ther are a mastek");
+}
 console.log(personalMovieDB);
 
 
-
-
-
+ 
 
 
 
